@@ -31,3 +31,5 @@ Admin Features:
 ## Steps to Develop the application
 
 - Setup Git and GitHub.
+- NPM intialization.
+- Mongodb setup

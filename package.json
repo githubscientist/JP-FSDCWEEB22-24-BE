@@ -1,0 +1,34 @@
+{
+  "name": "jp-fsdcweeb22-24-be",
+  "version": "1.0.0",
+  "description": "This is a Job Portal Application that is built using React for the frontend and Node.js with Express for the backend. The application allows users to browse job listings, apply for jobs, and manage their profiles.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/githubscientist/JP-FSDCWEEB22-24-BE.git"
+  },
+  "keywords": [
+    "job",
+    "portal",
+    "react",
+    "nodejs",
+    "expressjs",
+    "mongodb",
+    "mongoose",
+    "jwt"
+  ],
+  "author": "Sathish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/githubscientist/JP-FSDCWEEB22-24-BE/issues"
+  },
+  "homepage": "https://github.com/githubscientist/JP-FSDCWEEB22-24-BE#readme",
+  "dependencies": {
+    "dotenv": "^17.2.2",
+    "mongoose": "^8.18.2"
+  }
+}
