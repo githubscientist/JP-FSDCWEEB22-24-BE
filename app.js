@@ -6,6 +6,7 @@ const logger = require('./utils/logger');
 const errorRoute = require('./utils/errorRoute');
 const companyRouter = require('./routes/companyRoutes');
 const jobRouter = require('./routes/jobRoutes');
+const applicationRouter = require('./routes/applicationRoutes');
 
 // create an express application
 const app = express();
@@ -26,6 +27,7 @@ app.use(logger);
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/companies', companyRouter);
 app.use('/api/v1/jobs', jobRouter);
+app.use('/api/v1/applications', applicationRouter);
 
 // handle undefined routes
 app.use(errorRoute);
