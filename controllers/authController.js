@@ -2,6 +2,7 @@ const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { JWT_SECRET, NODE_ENV } = require('../utils/config');
+const sendEmail = require('../utils/email');
 
 const register = async (req, res) => {
     try {
@@ -29,6 +30,9 @@ const register = async (req, res) => {
         if (!savedUser) {
             return res.status(500).json({ message: 'Failed to register user' });
         }
+
+        // send an email to the user
+        await sendEmail(email, 'Welcome to Our App', `Hello ${name},\n\nThank you for registering at our app!\n\nBest regards,\nThe Team`);
 
         // return a success response
         return res.status(201).json({

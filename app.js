@@ -4,6 +4,7 @@ const authRouter = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
 const logger = require('./utils/logger');
 const errorRoute = require('./utils/errorRoute');
+const companyRouter = require('./routes/companyRoutes');
 
 // create an express application
 const app = express();
@@ -22,6 +23,7 @@ app.use(logger);
 
 // define the routes -- routers
 app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/companies', companyRouter);
 
 // handle undefined routes
 app.use(errorRoute);

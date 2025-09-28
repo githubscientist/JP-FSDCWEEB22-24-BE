@@ -6,8 +6,11 @@ const User = require('../models/user');
 
 const authRouter = express.Router();
 
+// Public routes
 authRouter.post('/register', register);
 authRouter.post('/login', login);
+
+// Protected routes: All Authenticated users can access these routes
 authRouter.get('/getMe', isAuthenticated, getMe);
 authRouter.post('/logout', isAuthenticated, logout);
 
