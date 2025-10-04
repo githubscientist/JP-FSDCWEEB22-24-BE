@@ -14,7 +14,7 @@ const app = express();
 
 // enable CORS for all routes
 app.use(cors({
-    origin: 'https://jp-fsdcweeb22-24-fe.netlify.app/',
+    origin: 'https://jp-fsdcweeb22-24-fe.netlify.app',
     credentials: true,
 }));
 
