@@ -1,3 +1,4 @@
+const { get } = require('mongoose');
 const Company = require('../models/company');
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
@@ -118,10 +119,23 @@ const createRecruiter = async (req, res) => {
     }
 }
 
+const getAllRecruiters = async (req, res) => {
+    try {
+        // get all the recruiters in the database
+        const recruiters = await User.find({ role: 'recruiter' }).populate('assignedCompany', 'name');
+
+        // return it as a response
+        res.status(200).json({ recruiters });
+    } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+}
+
 module.exports = {
     createCompany,
     getAllCompanies,
     updateCompany,
     deleteCompany,
-    createRecruiter
+    createRecruiter,
+    getAllRecruiters
 }

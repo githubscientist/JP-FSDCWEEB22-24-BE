@@ -12,12 +12,12 @@ const jobSchema = new mongoose.Schema({
     location: { type: String, required: true },
     jobType: {
         type: String,
-        enum: ['full-time', 'part-time', 'contract', 'internship', 'freelance'],
-        default: 'full-time'
+        enum: ['Full-time', 'Part-time', 'Contract', 'Internship', 'Freelance'],
+        default: 'Full-time'
     },
     experienceLevel: {
         type: String,
-        enum: ['entry', 'junior', 'mid', 'senior', 'lead', 'executive'],
+        enum: ['Entry', 'Junior', 'Mid', 'Senior', 'Lead', 'Executive'],
         default: 'entry'
     },
     skills: [{ type: String }],

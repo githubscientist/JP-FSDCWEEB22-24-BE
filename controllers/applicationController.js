@@ -8,7 +8,7 @@ const applyForJob = async (req, res) => {
         const { coverLetter } = req.body;
 
         // check if job exists and is active
-        const job = await Job.findOne({ _id: jobId, status: 'active' });
+        const job = await Job.findOne({ _id: jobId, isActive: true });
 
         if (!job) {
             return res.status(404).json({ message: 'Job not found or not active' });

@@ -1,5 +1,5 @@
 const express = require('express');
-const { createCompany, getAllCompanies, updateCompany, deleteCompany, createRecruiter } = require('../controllers/adminController');
+const { createCompany, getAllCompanies, updateCompany, deleteCompany, createRecruiter, getAllRecruiters } = require('../controllers/adminController');
 const { isAuthenticated, allowRoles } = require('../middlewares/auth');
 
 const companyRouter = express.Router();
@@ -13,5 +13,6 @@ companyRouter.get('/', getAllCompanies);
 companyRouter.put('/:id', updateCompany);
 companyRouter.delete('/:id', deleteCompany);
 companyRouter.post('/recruiters', createRecruiter);
+companyRouter.get('/recruiters', getAllRecruiters);
 
 module.exports = companyRouter;

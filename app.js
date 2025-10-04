@@ -7,9 +7,16 @@ const errorRoute = require('./utils/errorRoute');
 const companyRouter = require('./routes/companyRoutes');
 const jobRouter = require('./routes/jobRoutes');
 const applicationRouter = require('./routes/applicationRoutes');
+const cors = require('cors');
 
 // create an express application
 const app = express();
+
+// enable CORS for all routes
+app.use(cors({
+    origin: 'http://localhost:5173',
+    credentials: true,
+}));
 
 // enable serving static files from the "uploads" directory
 app.use('/uploads', express.static('uploads'));

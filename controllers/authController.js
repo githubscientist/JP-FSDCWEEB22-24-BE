@@ -78,6 +78,13 @@ const login = async (req, res) => {
         // return a success response
         return res.status(200).json({
             message: 'User logged in successfully',
+            user: {
+                id: user[0]._id,
+                name: user[0].name,
+                email: user[0].email,
+                role: user[0].role,
+                assignedCompany: user[0].assignedCompany || null
+            }
         });
     } catch (error) {
         res.status(500).json({ message: 'Internal Server Error' });
@@ -90,7 +97,7 @@ const getMe = async (req, res) => {
         const userId = req.userId;
 
         // get the user details from the database
-        const user = await User.findById(userId).select('-password');
+        const user = await User.findById(userId).select('-password').populate('assignedCompany', 'name');
 
         // if the user does not exist, return an error
         if (!user) {

@@ -11,7 +11,7 @@ applicationRouter.post('/:jobId/apply', allowRoles(['user']), applyForJob);
 applicationRouter.get('/', allowRoles(['user']), getUserApplications);
 
 // recruiter routes
-applicationRouter.put('/:id/status', allowRoles(['recruiter']), updateApplicationStatus);
+applicationRouter.put('/:applicationId/status', allowRoles(['recruiter']), updateApplicationStatus);
 
 // shared routes --user and recruiter
 applicationRouter.get('/:id', allowRoles(['user', 'recruiter']), getApplicationById);
